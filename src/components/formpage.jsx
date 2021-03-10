@@ -13,11 +13,33 @@ function FormPage() {
 
   const handleOnChange = ({ currentTarget: { name, value } }) =>
     setFields((state) => ({ ...state, [name]: value }));
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const URL = "https://api.apispreadsheets.com/data/9260/";
+    fetch(URL, {
+      method: "POST",
+      body: JSON.stringify({
+        data: {
+          name: fields.name,
+          age: fields.age,
+          residence: fields.residence,
+          comment: fields.comment,
+        },
+      }),
+    }).then((res) => {
+      if (res.status === 201) {
+        alert("Submitted Successfully");
+      } else {
+        // ERROR
+        alert("Submission Error");
+      }
+    });
+  };
   console.log(fields);
   return (
     <div className="formpage component">
       <h3 className="form-title">{form.title}</h3>
-      <form className="form">
+      <form className="form" onSubmit={handleSubmit}>
         {form &&
           form.input.map((field) => (
             <CustomInput
@@ -29,7 +51,7 @@ function FormPage() {
               handleChange={handleOnChange}
             />
           ))}
-        <CustomButton>SUBMIT</CustomButton>
+        <CustomButton type="submit">SUBMIT</CustomButton>
       </form>
     </div>
   );
