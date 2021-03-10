@@ -1,0 +1,37 @@
+.SurveyApp {
+  padding: 1.5rem;
+  // height: 100%;
+}
+
+.formpage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  // max-width: ;
+  max-width: 40rem;
+  background-color: whitesmoke;
+  border-radius: 2.5%;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.19);
+
+  .form-title {
+    align-self: flex-start;
+  }
+  .form {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    // max-width: 20rem;
+    .custom-button {
+      margin-top: 2rem;
+    }
+  }
+}
+
+@media screen and (min-width: 424px) {
+  .formpage {
+    width: 80%;
+  }
+}
