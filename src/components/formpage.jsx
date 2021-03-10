@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Anime from 'react-anime';
 import useLoadingHook from '../hooks/loadingHook'
 import { form } from "../data";
 import { CustomInput } from "./custom-input/custom-input.component";
