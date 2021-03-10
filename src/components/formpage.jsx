@@ -29,6 +29,12 @@ function FormPage() {
     }).then((res) => {
       if (res.status === 201) {
         alert("Submitted Successfully");
+        setFields({
+          name: "",
+          age: "",
+          residence: "",
+          comment: "",
+        });
       } else {
         // ERROR
         alert("Submission Error");
