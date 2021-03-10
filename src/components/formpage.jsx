@@ -45,10 +45,6 @@ export function FormPage() {
       }
     });
   };
-  console.log("data: ",data);
-  // let animeProps = {
-   
-  // }
   return (
    <>
     {
@@ -57,12 +53,7 @@ export function FormPage() {
         
       <h3 className="form-title">{content.title}</h3>
       <form className="form" onSubmit={handleSubmit} >
-           <Anime 
-          opacity= {[0,1]}
-          translateY={ [100, 0]}
-          delay={ (el, i) => i * 200}
-           easing= "linear"
-        > 
+
         {
           content.input?.map((field) => (
             <CustomInput
@@ -75,7 +66,6 @@ export function FormPage() {
               handleChange={handleOnChange}
             />
           ))}
-          </Anime>
         <CustomButton type="submit">SUBMIT</CustomButton>
       </form>
     </div>
