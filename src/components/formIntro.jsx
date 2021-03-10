@@ -14,8 +14,8 @@ const FormIntro = () => {
   {
    loading ? <SkeletonCard /> :
   data.map((content,i)=>(
-  <div className="formpage component">
-  
+  <div key={i} className="formpage component">
+
    <h3 className="form-title">{content?.title}</h3>
    {
     content.intro?.map((paragraph, i) =>(
