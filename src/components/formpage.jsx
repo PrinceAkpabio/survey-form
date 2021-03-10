@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { form } from "../data";
 import { CustomInput } from "./custom-input/custom-input.component";
 import CustomButton from "./custom-button/custom-button.component";
 
-function FormPage() {
+export function FormPage({ formItem }) {
   const [fields, setFields] = useState({
     name: "",
     age: "",
@@ -44,10 +43,10 @@ function FormPage() {
   console.log(fields);
   return (
     <div className="formpage component">
-      <h3 className="form-title">{form.title}</h3>
+      <h3 className="form-title">{formItem.title}</h3>
       <form className="form" onSubmit={handleSubmit}>
-        {form &&
-          form.input.map((field) => (
+        {formItem &&
+          formItem.input?.map((field) => (
             <CustomInput
               key={field.id}
               type={field.type}
@@ -62,5 +61,4 @@ function FormPage() {
     </div>
   );
 }
-
 export default FormPage;

@@ -5,6 +5,7 @@
 
 .formpage {
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -15,19 +16,35 @@
   border-radius: 2.5%;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.19);
 
+ 
   .form-title {
     align-self: flex-start;
+    position: relative;
+     &::before{
+    content: "";
+    position: absolute;
+    bottom: -5%;
+    width: 100%;
+    height: 0.2rem;
+    background-color: yellow;
+    border-radius: 2.5%;
+  }
   }
   .form {
     display: grid;
     justify-content: center;
     align-items: center;
     width: 95%;
+    list-style-type: none;
     // max-width: 20rem;
     .custom-button {
       margin-top: 2rem;
     }
   }
+  .custom-button {
+      margin-top: 2rem;
+      align-self: flex-start;
+    }
 }
 
 @media screen and (min-width: 424px) {
