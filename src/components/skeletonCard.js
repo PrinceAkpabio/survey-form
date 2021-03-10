@@ -5,7 +5,8 @@ const SkeletonCard = () => {
   return (
     <section className="formpage bk">
       <h3 className="form-title">
-        <Skeleton height={150} />
+        <Skeleton height={150} width={280} />
+         </h3>
         <ul className="form">
           {Array(9)
             .fill()
@@ -15,7 +16,7 @@ const SkeletonCard = () => {
               </li>
             ))}
         </ul>
-      </h3>
+     
     </section>
   );
 };

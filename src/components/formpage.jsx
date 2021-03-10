@@ -1,14 +1,19 @@
 import React, { useState } from "react";
+import Anime from 'react-anime';
+import useLoadingHook from '../hooks/loadingHook'
+import { form } from "../data";
 import { CustomInput } from "./custom-input/custom-input.component";
 import CustomButton from "./custom-button/custom-button.component";
 
-export function FormPage({ formItem }) {
+export function FormPage() {
   const [fields, setFields] = useState({
     name: "",
     age: "",
     residence: "",
     comment: "",
   });
+
+  const {data} = useLoadingHook(form)
 
   const handleOnChange = ({ currentTarget: { name, value } }) =>
     setFields((state) => ({ ...state, [name]: value }));
@@ -40,14 +45,28 @@ export function FormPage({ formItem }) {
       }
     });
   };
-  console.log(fields);
+  console.log("data: ",data);
+  // let animeProps = {
+   
+  // }
   return (
-    <div className="formpage component">
-      <h3 className="form-title">{formItem.title}</h3>
-      <form className="form" onSubmit={handleSubmit}>
-        {formItem &&
-          formItem.input?.map((field) => (
+   <>
+    {
+      data.map((content,i)=>(
+    <div key={i} className="formpage component">
+        
+      <h3 className="form-title">{content.title}</h3>
+      <form className="form" onSubmit={handleSubmit} >
+           <Anime 
+          opacity= {[0,1]}
+          translateY={ [100, 0]}
+          delay={ (el, i) => i * 200}
+           easing= "linear"
+        > 
+        {
+          content.input?.map((field) => (
             <CustomInput
+              // key={i}
               key={field.id}
               type={field.type}
               name={field.name}
@@ -56,9 +75,12 @@ export function FormPage({ formItem }) {
               handleChange={handleOnChange}
             />
           ))}
+          </Anime>
         <CustomButton type="submit">SUBMIT</CustomButton>
       </form>
     </div>
+      ))}
+</>
   );
 }
 export default FormPage;

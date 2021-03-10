@@ -13,10 +13,12 @@ const FormIntro = () => {
 <>
   {
    loading ? <SkeletonCard /> :
+  data.map((content,i)=>(
   <div className="formpage component">
-   <h3 className="form-title">{data?.title}</h3>
+  
+   <h3 className="form-title">{content?.title}</h3>
    {
-    data.intro?.map((paragraph, i) =>(
+    content.intro?.map((paragraph, i) =>(
      <p key={i}
      className="input-group"
      >{paragraph}</p>
@@ -24,6 +26,7 @@ const FormIntro = () => {
    }
    <CustomButton onClick={()=> {history.push("/form")}}>Next</CustomButton>
   </div>
+  ))
   }
 </>
  )

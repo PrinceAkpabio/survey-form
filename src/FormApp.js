@@ -6,13 +6,14 @@ import SkeletonCard from "./components/skeletonCard";
 import useLoadingHook from './hooks/loadingHook'
 
 export const FormApp = () => {
-  const {data, loading} = useLoadingHook(form)
+  const { loading} = useLoadingHook(form);
   return (
     <>
       {loading ? (
         <SkeletonCard />
       ) : (
-        <FormPage formItem={data} />
+        
+        <FormPage />
       )}
     </>
   );

@@ -1,9 +1,13 @@
 .formpage.bk{
   background-color: transparent;
   box-shadow: none;
+
+  .form-title{
+    align-self: center;
+  }
   
    .form {
-    width: 100%;
+    // width: 100%;
     list-style-type: none;
     }
  }

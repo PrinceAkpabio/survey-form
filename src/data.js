@@ -1,6 +1,6 @@
 const date = new Date().getMilliseconds();
 
-export const form = {
+export const form = [{
   title:
     "Ph.D Seminar Research Audience Survey Questionnaire: Looking at the FRCN (Radio Nigeria) slogan – Uplifting the people and uniting the nation: Are these promises being met?",
   intro: [
@@ -28,4 +28,4 @@ export const form = {
       label: "Comment",
     },
   ],
-};
+}];
