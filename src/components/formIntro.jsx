@@ -20,7 +20,7 @@ const FormIntro = () => {
    {
     content.intro?.map((paragraph, i) =>(
      <p key={i}
-     className="input-group"
+     className="input-group intro"
      >{paragraph}</p>
     ))
    }

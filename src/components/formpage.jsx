@@ -50,20 +50,20 @@ export function FormPage() {
       data.map((content,i)=>(
     <div key={i} className="formpage component">
         
-      <h3 className="form-title">{content.title}</h3>
+      <h1 className="form-title">{content.title}</h1>
       <form className="form" onSubmit={handleSubmit} >
 
         {
-          content.input?.map((field) => (
+          content.input?.map((field) => (       
             <CustomInput
-              // key={i}
               key={field.id}
               type={field.type}
               name={field.name}
               label={field.label}
               value={fields[field.name]}
+              question={field.question}
               handleChange={handleOnChange}
-            />
+            />  
           ))}
         <CustomButton type="submit">SUBMIT</CustomButton>
       </form>

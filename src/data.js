@@ -26,6 +26,26 @@ export const form = [{
       name: "comment",
       type: "textarea",
       label: "Comment",
+      question: "What is your gender? "
+    },
+    {
+      id: 5 + date,
+      name: "gender",
+      type: "radio",
+      label: "Male",
+      question: "What is your gender? "
+    },
+    {
+      id: 6 + date,
+      name: "gender",
+      type: "radio",
+      label: "Female",
+    },
+    {
+      id: 7 + date,
+      name: "gender",
+      type: "radio",
+      label: "non-binary",
     },
   ],
 }];
